@@ -1,0 +1,28 @@
+{
+  "tracks": [
+    {
+      "id": 14,
+      "artist": "John Lennon",
+      "duration": 2.5,
+      "title": "Let it Be"
+    },
+    {
+      "id": 15,
+      "artist": "Paul McCartney",
+      "duration": 2.1,
+      "title": "Imagine"
+    },
+    {
+      "id": 16,
+      "artist": "Megadeth",
+      "duration": 6.8,
+      "title": "Tornado of Soul"
+    },
+    {
+      "id": 17,
+      "artist": "Rammstein",
+      "duration": 3.5,
+      "title": "Sonne"
+    }
+  ]
+}

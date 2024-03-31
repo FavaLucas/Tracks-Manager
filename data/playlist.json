@@ -1,0 +1,58 @@
+{
+  "playlist": [
+    {
+      "id": "1",
+      "duration": "100",
+      "title": "'rock nacional'",
+      "cantCanciones": "10",
+      "tracks": [
+        {
+          "id": 1,
+          "artist": "'Poul McCarney'",
+          "duration": 200,
+          "title": "Let it be"
+        },
+        {
+          "id": 2,
+          "artist": "'Poul McCarney'",
+          "duration": 200,
+          "title": "'Let it be'"
+        },
+        {
+          "id": 3,
+          "artist": "'Poul McCarney'",
+          "duration": 200,
+          "title": "'Let it be'"
+        }
+      ],
+      "estilo": "'rock & roll'"
+    },
+    {
+      "id": "2",
+      "duration": "100",
+      "title": "'rock nacional'",
+      "cantCanciones": "10",
+      "tracks": [
+        {
+          "id": 4,
+          "artist": "'Poul McCarney'",
+          "duration": 200,
+          "title": "Let it be"
+        },
+        {
+          "id": 5,
+          "artist": "'Poul McCarney'",
+          "duration": 200,
+          "title": "'Let it be'"
+        },
+        {
+          "id": 6,
+          "artist": "'Poul McCarney'",
+          "duration": 200,
+          "title": "'Let it be'"
+        }
+      ],
+      "estilo": "'rock & roll'"
+    }
+  ]
+}
