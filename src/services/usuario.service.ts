@@ -7,22 +7,22 @@ let usuarios: Usuario[] = [
     {
         id: 1,
         nombre: "Marito",
-        playlist: [1, 2, 3]
+        playlist: [1]
     },
     {
         id: 2,
         nombre: "Lucas",
-        playlist: [1, 2, 3]
+        playlist: [1]
     },
     {
         id: 3,
         nombre: "Kevin",
-        playlist: [1, 2, 3]
+        playlist: [1]
     },
     {
         id: 4,
         nombre: "Fran",
-        playlist: [1, 2, 3]
+        playlist: [1]
     }
 ];
 
@@ -79,7 +79,7 @@ export class UsuarioService {
 
     //Delete
     buscarPlaylistEnUsuario(idPlaylist: number): boolean {
-        //recorrer usuario por usuario
+        //recorrer usuario por usuarioS
 
         for (const usuario of usuarios) {
             const playlistEncontrada = usuario.playlist.includes(idPlaylist);

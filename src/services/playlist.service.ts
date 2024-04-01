@@ -153,28 +153,6 @@ export class PlaylistService {
   
 
 
-//   deletePlaylistSinUsar(idPlaylist: number): string {
-//     //recorrer usuario por usuario
-
-//     for (const usuario of usuarios) {
-//         const playlistEncontrada = usuario.playlist.includes(idPlaylist);
-
-//         if (playlistEncontrada) {
-//             console.log("La playlist está siendo utilizada por al menos un usuario.");
-//             return "No se puede borrar la playlist porque la tiene al menos un usuario.";
-//         }
-//     }
-//     console.log("!!!")
-//     const playlistBorrada = this.plservice.eliminarPlaylistByID(idPlaylist);
-//     console.log("playlistBorrada", playlistBorrada);
-//     return "Se elimino la playlist que no tenia ningun usuario"
-
-// }
-
-
-
-
-
 }
 
 

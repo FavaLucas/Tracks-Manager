@@ -14,7 +14,7 @@ import { usuarioController } from './controllers/usuario.controller';
   imports: [
     ServeStaticModule.forRoot({ rootPath: join(__dirname, '..', 'client') }),
   ],
-  controllers: [TracksController, PlaylistController, ArtistaController, UsuarioService],
-  providers: [TracksService, PlaylistService, ArtistaService, usuarioController],
+  controllers: [TracksController, PlaylistController, ArtistaController, usuarioController],
+  providers: [TracksService, PlaylistService, ArtistaService, UsuarioService],
 })
 export class AppModule {}

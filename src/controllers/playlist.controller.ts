@@ -41,7 +41,7 @@ export class PlaylistController {
     return 'No se encontro la Playlist correspondiente al ID indicado.';
   }
 
-  @Delete('/delete/:id')
+  @Delete('/TrackDelete/:id')
   async eliminarTrackDePlaylist(@Param() params: any, @Body() body: iTrack): Promise< string | iPlaylist>  {
     const trackID = body;
     const { id } = params;
@@ -53,9 +53,9 @@ export class PlaylistController {
   }
 
   // Borrar playList entera
-  @Delete('/:id')
+  @Delete('/DeletePlaylist/:id')
   eliminarPlaylistByID(@Param() idPlaylist: number): string {
-    this.eliminarPlaylistByID(idPlaylist);
+    this.playlistservice.eliminarPlaylistByID(idPlaylist);
     return 'Se ha borrado la playlist con exito';
   }
 
