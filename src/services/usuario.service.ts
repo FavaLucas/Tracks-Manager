@@ -30,7 +30,7 @@ let usuarios: Usuario[] = [
 export class UsuarioService {
     private plservice?: PlaylistService;
     // static setPlayListService: any;
-    constructor() {}
+    constructor() { }
 
     setPlayListService(plservice: PlaylistService) {
         this.plservice = plservice;
@@ -78,7 +78,7 @@ export class UsuarioService {
     }
 
     //Delete
-    deletePlaylistSinUsar(idPlaylist: number): string {
+    buscarPlaylistEnUsuario(idPlaylist: number): boolean {
         //recorrer usuario por usuario
 
         for (const usuario of usuarios) {
@@ -86,35 +86,38 @@ export class UsuarioService {
 
             if (playlistEncontrada) {
                 console.log("La playlist está siendo utilizada por al menos un usuario.");
-                return "No se puede borrar la playlist porque la tiene al menos un usuario.";
+                return true;
             }
         }
         console.log("!!!")
-        const playlistBorrada = this.plservice.eliminarPlaylistByID(idPlaylist);
-        console.log("playlistBorrada", playlistBorrada);
-        return "Se elimino la playlist que no tenia ningun usuario"
+        // const playlistBorrada = this.plservice.eliminarPlaylistByID(idPlaylist);
+        // console.log("playlistBorrada", playlistBorrada);
+        // En caso de que ningun usuario contenga la playlist retorno False.
+        return false
 
-
-
-        // const usuarioBuscado2 = usuarios.forEach((us2) => {
-        //     const playlistEncontrada = us2.playlist.map((plNumber) => plNumber == idPlaylist)
-        //     console.log("playlistEncontrada", playlistEncontrada);
-
-        //     if (playlistEncontrada) {
-        //         console.log("playlistEncontrada dentro del if")
-        //         // return "No se puede borrar la playlist porque la tiene un usuario";
-        //     } else {
-        //         //Llamamos al metodo de borrar playlist porque ya sabemos que ninigun usuario la tiene
-        //         const playlistBorrada = this.plservice.eliminarPlaylistByID(idPlaylist);
-        //         console.log("playlistBorrada", playlistBorrada);
-        //         return "Se elimino la playlist que no tenia ningun usuario"
-        //     }
-        // });
-
-        // return "No se puede borrar la playlist porque la tiene un usuario"
-        //recorremos las playlist de cada usuario
-        //si la playlist buscada existe, no se borra
-        //Si no se borra
     }
+
+    
+
+    // const usuarioBuscado2 = usuarios.forEach((us2) => {
+    //     const playlistEncontrada = us2.playlist.map((plNumber) => plNumber == idPlaylist)
+    //     console.log("playlistEncontrada", playlistEncontrada);
+
+    //     if (playlistEncontrada) {
+    //         console.log("playlistEncontrada dentro del if")
+    //         // return "No se puede borrar la playlist porque la tiene un usuario";
+    //     } else {
+    //         //Llamamos al metodo de borrar playlist porque ya sabemos que ninigun usuario la tiene
+    //         const playlistBorrada = this.plservice.eliminarPlaylistByID(idPlaylist);
+    //         console.log("playlistBorrada", playlistBorrada);
+    //         return "Se elimino la playlist que no tenia ningun usuario"
+    //     }
+    // });
+
+    // return "No se puede borrar la playlist porque la tiene un usuario"
+    //recorremos las playlist de cada usuario
+    //si la playlist buscada existe, no se borra
+    //Si no se borra
+
 }
 

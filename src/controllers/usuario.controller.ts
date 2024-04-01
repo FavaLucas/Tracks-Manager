@@ -1,12 +1,12 @@
-import {Body,Controller,Delete,Get,HttpStatus,Param,ParseIntPipe,Patch,Post,Put,Res,} from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpStatus, Param, ParseIntPipe, Patch, Post, Put, Res, } from '@nestjs/common';
 import Usuario from 'src/model/usuario.model';
 import { UsuarioService } from 'src/services/usuario.service';
 
 @Controller('/api/usuarios')
 export class usuarioController {
 
-    constructor(private readonly usuarioService: UsuarioService) { 
-    
+    constructor(private readonly usuarioService: UsuarioService) {
+
     }
 
     @Post()
@@ -28,8 +28,8 @@ export class usuarioController {
         return this.usuarioService.postPlaylistEnUsuario(idUsuario, idPlaylist);
     }
 
-    @Delete('/idPlaylistParaBorrar/:idPlaylist')
-    deletePlaylistSinUsar(@Param('idPlaylist') idPl: number): string {
-        return this.usuarioService.deletePlaylistSinUsar(idPl);
+    @Get('/idPlaylistParaBorrar/:idPlaylist')
+    buscarPlaylistEnUsuario(@Param('idPlaylist') idPl: number): Boolean {
+        return this.usuarioService.buscarPlaylistEnUsuario(idPl);
     }
 }

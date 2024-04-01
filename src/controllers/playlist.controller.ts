@@ -51,4 +51,12 @@ export class PlaylistController {
     }
     return 'No se encontró la playlist ';
   }
+
+  // Borrar playList entera
+  @Delete('/:id')
+  eliminarPlaylistByID(@Param() idPlaylist: number): string {
+    this.eliminarPlaylistByID(idPlaylist);
+    return 'Se ha borrado la playlist con exito';
+  }
+
 }

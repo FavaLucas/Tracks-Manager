@@ -100,10 +100,14 @@ export class PlaylistService {
   async eliminarPlaylistByID(playlistID: number): Promise<string> {
     const res = await fetch(BASE_URL);
     const parsed = await res.json();
-    const newPlaylist = parsed.find((plMusic) => plMusic.id == playlistID);
-    if (newPlaylist) {
+    const existe = this.usuarioService.buscarPlaylistEnUsuario(playlistID);
+
+    const newPlaylist = parsed.findIndex((plMusic) => plMusic.id == playlistID);
+    if (newPlaylist != -1 && !existe) {
       //la borramos
-      parsed.splice(newPlaylist.id, 1);
+    
+      
+      parsed.splice(newPlaylist, 1);
       console.log("playlistsMusic", parsed);
 
       return "Se borro la playlist"
@@ -111,6 +115,7 @@ export class PlaylistService {
       return "Con el id indicado no se pudo borrar la playlist"
     }
   }
+  
   private existeTrackArtist(tracks: iTrack[], artist: string): boolean {
     return (
       tracks.filter((tr) => {
@@ -145,19 +150,35 @@ export class PlaylistService {
     return 'la playlist no existe';
   }
 
-  // eliminarPlaylistByID(playlistID: number): string {
-  //   const newPlaylist = playlistsMusic.find((plMusic) => plMusic.id == playlistID);
-  //   if (newPlaylist) {
-  //     //la borramos
-  //     playlistsMusic.splice(newPlaylist.id, 1);
-  //     console.log("playlistsMusic", playlistsMusic);
+  
 
-  //     return "Se borro la playlist"
-  //   } else {
-  //     return "Con el id indicado no se pudo borrar la playlist"
-  //   }
+
+//   deletePlaylistSinUsar(idPlaylist: number): string {
+//     //recorrer usuario por usuario
+
+//     for (const usuario of usuarios) {
+//         const playlistEncontrada = usuario.playlist.includes(idPlaylist);
+
+//         if (playlistEncontrada) {
+//             console.log("La playlist está siendo utilizada por al menos un usuario.");
+//             return "No se puede borrar la playlist porque la tiene al menos un usuario.";
+//         }
+//     }
+//     console.log("!!!")
+//     const playlistBorrada = this.plservice.eliminarPlaylistByID(idPlaylist);
+//     console.log("playlistBorrada", playlistBorrada);
+//     return "Se elimino la playlist que no tenia ningun usuario"
+
+// }
+
+
+
+
 
 }
+
+
+
 
 
 
